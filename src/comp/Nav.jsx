@@ -1,32 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import fs from '../assets/Screenshot 2024-09-13 at 21.48.23.png';
+import { FaBars } from "react-icons/fa";
 
 function Nav() {
-  return (
-    <div>
-      <nav className="flex justify-between w-[85%] mx-auto mt-5">
-        <div>
-          <h1 className="text-3xl font-bold ">Edusity</h1>
-        </div>
-        <div>
-          <ul className="flex gap-7 h-[3rem] text-center ">
-            {["Home", "Program", "About us", "Campus", "Testimonials"].map(
-              (item) => (
-                <li
-                  key={item}
-                  className="px-4 py-2 flex items-center justify-center"
-                >
-                  {item}
-                </li>
-              )
-            )}
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
-            <li className="bg-slate-800 text-white px-4 py-2 rounded-full flex items-center justify-center">
-              Contact Us
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 ms:w-[85%] w-full mx-auto flex justify-between px-6 py-4 transition-colors duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'} z-50`}
+    >
+      <div className='flex items-center'>
+        <img src={fs} alt="FS" className="h-8 w-8 mr-4 mix-blend-multiply" />
+        <h1 className="text-3xl font-bold text-black hidden md:block">Fake School</h1>
+      </div>
+      <div className='sm:hidden'>
+        <button onClick={toggleMenu} className="p-2">
+          <FaBars />
+        </button>
+      </div>
+      <div className='hidden md:block'>
+        <ul className="flex gap-7 h-[3rem] text-center text-black">
+          {["Home", "Program", "About us", "Campus", "Testimonials"].map(item => (
+            <li
+              key={item}
+              className="px-4 py-2 flex items-center justify-center"
+            >
+              {item}
             </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+          ))}
+          <li className="bg-slate-800 text-white px-4 py-2 rounded-full flex items-center justify-center cursor-pointer">
+            Contact Us
+          </li>
+        </ul>
+      </div>
+      <div className={`absolute top-full left-0 right-0 bg-white shadow-md mt-2 ${isMenuOpen ? 'block' : 'hidden'} sm:hidden z-50`}>
+        <ul className="flex flex-col gap-2 p-4 text-center text-black">
+          {["Home", "Program", "About us", "Campus", "Testimonials", "Contact Us"].map(item => (
+            <li
+              key={item}
+              className="px-4 py-2 cursor-pointer"
+              onClick={() => setIsMenuOpen(false)} 
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
 }
 
