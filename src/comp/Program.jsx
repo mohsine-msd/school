@@ -6,7 +6,7 @@ import icon from '../assets//2606584_5920-removebg-preview.png'
 
 function Program() {
   return (
-    <div className='flex justify-center flex-col mt-10'>
+    <div className='flex justify-center flex-col mt-10 ' id='Program'>
         <div className='flex flex-col gap-8 mb-7'>
             <h1 className='text-center text-3xl font-bold'>Our Program</h1>
             <h2 className='text-center text-4xl'>What do we offer</h2>

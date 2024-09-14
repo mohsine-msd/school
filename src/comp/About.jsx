@@ -4,7 +4,7 @@ import play from '../assets/play-icon.png'
 
 function About() {
   return (
-    <div className="grid grid-col-1 md:grid-cols-3 w-[77%] mx-auto gap-28 mt-7 translate-x-11 ">
+    <div className="grid grid-col-1 md:grid-cols-3 w-[77%] mx-auto gap-28 mt-7 translate-x-11 " id="About us">
   <div className="relative col-span-1 flex items-center justify-center">
     <img src={about} alt="about" className="w-full h-auto rounded-md" />
     <img

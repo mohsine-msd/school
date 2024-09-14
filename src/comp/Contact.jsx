@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   return (
-     <div className="flex flex-col md:flex-row p-8 rounded-lg shadow-lg max-w-6xl mx-auto">
+     <div className="flex flex-col md:flex-row p-8 rounded-lg shadow-lg max-w-6xl mx-auto" id="Contact Us">
       <div className="md:w-1/2 pr-8">
         <h2 className="text-3xl font-bold mb-4 text-gray-800">Send a message</h2>
         <p className="mb-6 text-gray-600">

@@ -44,11 +44,12 @@ function Nav() {
               key={item}
               className="px-4 py-2 flex items-center justify-center"
             >
-              {item}
+            <a href={`#${item}`}>{item}</a>
+
             </li>
           ))}
           <li className="bg-slate-800 text-white px-4 py-2 rounded-full flex items-center justify-center cursor-pointer">
-            Contact Us
+            <a href="#Contact Us">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -60,7 +61,7 @@ function Nav() {
               className="px-4 py-2 cursor-pointer"
               onClick={() => setIsMenuOpen(false)} 
             >
-              {item}
+              <a href={`#${item}`}>{item}</a>
             </li>
           ))}
         </ul>

@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 export default function Hero() {
   return (
     <div className="relative h-screen bg-cover bg-center bg-gradient-to-b"
-     style={{ backgroundImage: `url(${heroPattern})`}}>
+     style={{ backgroundImage: `url(${heroPattern})`}} id='Home'>
       <Nav />
 
       <div className="absolute inset-0 flex flex-col gap-10 items-center justify-center text-center text-white">
