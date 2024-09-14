@@ -26,13 +26,13 @@ function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 ms:w-[85%] w-full mx-auto flex justify-between px-6 py-4 transition-colors duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'} z-50`}
+      className={`fixed top-0 left-0 right-0 ms:w-[85%] w-full p-0 md:pr-[120px] md:pl-[120px] mx-auto flex justify-between px-6 py-4 transition-colors duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'} z-50`}
     >
       <div className='flex items-center'>
         <img src={fs} alt="FS" className="h-8 w-8 mr-4 mix-blend-multiply" />
         <h1 className="text-3xl font-bold text-black hidden md:block">Fake School</h1>
       </div>
-      <div className='sm:hidden'>
+      <div className='md-custom:hidden'>
         <button onClick={toggleMenu} className="p-2">
           <FaBars />
         </button>
@@ -52,7 +52,7 @@ function Nav() {
           </li>
         </ul>
       </div>
-      <div className={`absolute top-full left-0 right-0 bg-white shadow-md mt-2 ${isMenuOpen ? 'block' : 'hidden'} sm:hidden z-50`}>
+      <div className={`absolute top-full left-0 right-0 bg-white shadow-md mt-2 ${isMenuOpen ? 'block' : 'hidden'} md-custom:hidden z-50`}>
         <ul className="flex flex-col gap-2 p-4 text-center text-black">
           {["Home", "Program", "About us", "Campus", "Testimonials", "Contact Us"].map(item => (
             <li
