@@ -39,7 +39,7 @@ function Nav() {
       </div>
       <div className='hidden md:block'>
         <ul className="flex gap-7 h-[3rem] text-center text-black">
-          {["Home", "Program", "About us", "Campus", "Testimonials"].map(item => (
+          {["Home", "Program", "About us",  "Testimonials"].map(item => (
             <li
               key={item}
               className="px-4 py-2 flex items-center justify-center"
@@ -55,7 +55,7 @@ function Nav() {
       </div>
       <div className={`absolute top-full left-0 right-0 bg-white shadow-md mt-2 ${isMenuOpen ? 'block' : 'hidden'} md-custom:hidden z-50`}>
         <ul className="flex flex-col gap-2 p-4 text-center text-black">
-          {["Home", "Program", "About us", "Campus", "Testimonials", "Contact Us"].map(item => (
+          {["Home", "Program", "About us",  "Testimonials", "Contact Us"].map(item => (
             <li
               key={item}
               className="px-4 py-2 cursor-pointer"
